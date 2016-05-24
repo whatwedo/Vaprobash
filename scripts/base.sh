@@ -44,11 +44,10 @@ sudo openssl genrsa -out "$SSL_DIR/xip.io.key" 1024
 sudo openssl req -new -subj "$(echo -n "$SUBJ" | tr "\n" "/")" -key "$SSL_DIR/xip.io.key" -out "$SSL_DIR/xip.io.csr" -passin pass:$PASSPHRASE
 sudo openssl x509 -req -days 365 -in "$SSL_DIR/xip.io.csr" -signkey "$SSL_DIR/xip.io.key" -out "$SSL_DIR/xip.io.crt"
 
-# Setting up Swap
-
 # Disable case sensitivity
 shopt -s nocasematch
 
+# Setting up Swap
 if [[ ! -z $2 && ! $2 =~ false && $2 =~ ^[0-9]*$ ]]; then
 
     echo ">>> Setting up Swap ($2 MB)"
