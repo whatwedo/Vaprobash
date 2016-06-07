@@ -93,6 +93,7 @@ symfony_root_folder   = "/vagrant/symfony" # Where to install Symfony.
 
 nodejs_version        = "latest"   # By default "latest" will equal the latest stable version
 nodejs_packages       = [          # List any global NodeJS packages that you want to install
+  "npm-check-updates"              # Show npm dependencies updates with ncu command
   #"grunt-cli",
   #"tsd",
   #"bower",
