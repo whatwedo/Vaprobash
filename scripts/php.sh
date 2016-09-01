@@ -54,9 +54,9 @@ else
     # -qq implies -y --force-yes
     if [ $PHP_VERSION == "7.0" ]; then
         # xdebug not yet supported by xdebug
-        sudo apt-get install -qq php7.0-cli php7.0-fpm php7.0-mysql php7.0-pgsql php7.0-sqlite php7.0-curl php7.0-gd php7.0-gmp php7.0-mcrypt php-memcached php-imagick php7.0-intl php7.0-xml
+        sudo apt-get install -qq php7.0-cli php7.0-fpm php7.0-mysql php7.0-pgsql php7.0-sqlite php7.0-curl php7.0-gd php7.0-gmp php7.0-mcrypt php-memcached php-imagick php7.0-intl php7.0-xml php7.0-mbstring
     else
-        sudo apt-get install -qq php5-cli php5-fpm php5-mysql php5-pgsql php5-sqlite php5-curl php5-gd php5-gmp php5-mcrypt php5-memcached php5-imagick php5-intl php5-common php5-cgi php5-imap php5-ldap php5-json  
+        sudo apt-get install -qq php5-cli php5-fpm php5-mysql php5-pgsql php5-sqlite php5-curl php5-gd php5-gmp php5-mcrypt php5-memcached php5-imagick php5-intl php5-common php5-cgi php5-imap php5-ldap php5-json php5-mbstring
     fi
 
     # Set PHP FPM to listen on TCP instead of Socket
