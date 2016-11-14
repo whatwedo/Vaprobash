@@ -61,7 +61,7 @@ mongo_enable_remote     = "true"        # remote access disabled when false
 
 # Languages and Packages
 php_timezone          = server_timezone  # http://php.net/manual/en/timezones.php
-php_version           = "7.0"            # Options: 5.5 | 5.6 | 7.0
+php_version           = "7.0"            # Options: 5.6 | 7.0
 ruby_version          = "latest"         # Choose what ruby version should be installed (will also be the default version)
 ruby_gems             = [                # List any Ruby Gems that you want to install
   #"jekyll",
