@@ -55,12 +55,6 @@ Here's a quickstart screencast!
 
 [<img src="https://secure-b.vimeocdn.com/ts/463/341/463341369_960.jpg" alt="Vaprobash Quickstart" style="max-width:100%"/>](http://vimeo.com/fideloper/vaprobash-quickstart)
 
-> <strong>Windows Users:</strong>
->
-> By default, NFS won't work on Windows. We suggest deleting the NFS block so Vagrant defaults back to its default file sync behavior.
->
-> However, you can also try the "vagrant-winnfsd" plugin. Just run `vagrant plugin install vagrant-winnfsd` to try it out!
-
 ## Docs
 
 [View the site and extended docs.](http://fideloper.github.io/Vaprobash/index.html)
