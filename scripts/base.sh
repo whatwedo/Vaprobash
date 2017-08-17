@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# optimize apt sources to select best mirror
+perl -pi -e 's@^\s*(deb(\-src)?)\s+http://us.archive.*?\s+@\1 mirror://mirrors.ubuntu.com/mirrors.txt @g' /etc/apt/sources.list
+
+# update repositories
+apt-get update
+
 echo "Setting Timezone & Locale to $3 & en_US.UTF-8"
 
 sudo ln -sf /usr/share/zoneinfo/$3 /etc/localtime
@@ -8,15 +14,6 @@ sudo locale-gen en_US
 sudo update-locale LANG=en_US.UTF-8 LC_CTYPE=en_US.UTF-8
 
 echo ">>> Installing Base Packages"
-
-if [[ -z $1 ]]; then
-    github_url="https://raw.githubusercontent.com/fideloper/Vaprobash/master"
-else
-    github_url="$1"
-fi
-
-# Update
-sudo apt-get update
 
 # Install base packages
 # -qq implies -y --force-yes
@@ -97,7 +94,7 @@ echo "RUN=yes" > /etc/default/cachefilesd
 # Set start directory
 echo "cd $4" >> /home/vagrant/.bashrc
 
+# Add SSH fingerprint
 echo ">>> adding ssh fingerprint of github.com"
-
 ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
 sudo -u vagrant ssh-keyscan -t rsa github.com >> ~/.ssh/known_hosts
