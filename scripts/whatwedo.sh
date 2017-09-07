@@ -3,7 +3,7 @@
 echo ">>> adding ssh fingerprint of dev.whatwedo.ch"
 
 ssh-keyscan -t rsa dev.whatwedo.ch >> ~/.ssh/known_hosts
-sudo -u vagrant ssh-keyscan -t rsa dev.whatwedo.ch >> ~/.ssh/known_hosts
+sudo -u vagrant sh -c "ssh-keyscan -t rsa dev.whatwedo.ch >> /home/vagrant/.ssh/known_hosts"
 
 echo ">>> Branding VM"
 
