@@ -3,17 +3,20 @@
 echo ">>> Installing Docker"
 
 # Add Key
-apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 # Add Repository
-echo "deb https://apt.dockerproject.org/repo ubuntu-trusty main" > /etc/apt/sources.list.d/docker.list
+sudo add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+
 sudo apt-get update
 
 # Install Docker
 # -qq implies -y --force-yes
 apt-get install -qq linux-image-extra-$(uname -r)
-sudo apt-get install -qq docker-engine
+sudo apt-get install -qq docker-ce
 
 # Make the vagrant user able to interact with docker without sudo
 if [ ! -z "$1" ]; then
