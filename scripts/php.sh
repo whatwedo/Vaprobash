@@ -40,7 +40,11 @@ else
     apt-get update
 
     # Install PHP
-    apt-get install -qq php$PHP_VERSION-cli php$PHP_VERSION-fpm php$PHP_VERSION-mysql php$PHP_VERSION-pgsql php$PHP_VERSION-sqlite php$PHP_VERSION-curl php$PHP_VERSION-gd php$PHP_VERSION-gmp php$PHP_VERSION-mcrypt php$PHP_VERSION-memcached php$PHP_VERSION-imagick php$PHP_VERSION-intl php$PHP_VERSION-common php$PHP_VERSION-cgi php$PHP_VERSION-imap php$PHP_VERSION-ldap php$PHP_VERSION-json php$PHP_VERSION-xml php$PHP_VERSION-mbstring php-xdebug
+    apt-get install -qq php$PHP_VERSION-cli php$PHP_VERSION-fpm php$PHP_VERSION-mysql php$PHP_VERSION-pgsql php$PHP_VERSION-sqlite php$PHP_VERSION-curl php$PHP_VERSION-gd php$PHP_VERSION-gmp php$PHP_VERSION-memcached php$PHP_VERSION-imagick php$PHP_VERSION-intl php$PHP_VERSION-common php$PHP_VERSION-cgi php$PHP_VERSION-imap php$PHP_VERSION-ldap php$PHP_VERSION-json php$PHP_VERSION-xml php$PHP_VERSION-mbstring php-xdebug
+
+    if [[ $PHP_VERSION == "5.6" || $PHP_VERSION == "7.0" || $PHP_VERSION == "7.1" ]]; then
+        apt-get install -qq php$PHP_VERSION-mcrypt
+    fi
 
     # Set PHP FPM to listen on TCP instead of Socket
     sed -i "s/listen =.*/listen = 127.0.0.1:9000/" "${PHP_PATH}"/fpm/pool.d/www.conf
