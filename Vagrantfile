@@ -12,7 +12,7 @@ github_url      = "https://raw.githubusercontent.com/#{github_username}/#{github
 github_pat          = ""
 
 # Server Configuration
-hostname        = "vaprobash.dev"
+hostname        = "vaprobash.test"
 start_dir       = "/vagrant"
 
 # Set a local private network IP address.
