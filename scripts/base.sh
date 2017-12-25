@@ -5,6 +5,7 @@ perl -pi -e 's@^\s*(deb(\-src)?)\s+http://us.archive.*?\s+@\1 mirror://mirrors.u
 
 # update repositories
 apt-get update
+apt-get upgrade -qq
 
 echo "Setting Timezone & Locale to $3 & en_US.UTF-8"
 
