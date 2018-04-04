@@ -380,7 +380,10 @@ Vagrant.configure("2") do |config|
   # Install Screen
   # config.vm.provision "shell", path: "#{github_url}/scripts/screen.sh"
 
-  # Install Mailcatcher
+  # Install Mailhog
+  # config.vm.provision "shell", path: "#{github_url}/scripts/mailhog.sh"
+
+  # Install Mailcatcher (deprecated)
   # config.vm.provision "shell", path: "#{github_url}/scripts/mailcatcher.sh"
 
   # Install git-ftp
