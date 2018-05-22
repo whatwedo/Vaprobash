@@ -106,7 +106,7 @@ rabbitmq_password = "password"
 
 sphinxsearch_version  = "rel22" # rel20, rel21, rel22, beta, daily, stable
 
-elasticsearch_version = "2.3.1" # 5.0.0-alpha1, 2.3.1, 2.2.2, 2.1.2, 1.7.5
+elasticsearch_version = "6.2.4"
 
 # Add SSH public key
 ssh_pub_key = File.readlines("#{Dir.home}/.ssh/id_rsa.pub").first.strip
