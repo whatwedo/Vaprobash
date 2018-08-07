@@ -14,7 +14,7 @@ The goal of this project is to create easy to use bash scripts in order to provi
 2. This project will give users various popular options such as LAMP, LEMP
 3. This project will attempt some modularity. For example, users might choose to install a Vim setup, or not.
 
-Some further assumptions and self-imposed restrictions. If you find yourself needing or wanting the following, then other provisioning tool would better suited ([Chef](http://www.getchef.com), [Puppet](http://puppetlabs.com), [Ansible](http://www.ansibleworks.com)).
+Some further assumptions and self-imposed restrictions. If you find yourself needing or wanting the following, then other provisioning tool would better suited ([Chef](https://www.chef.io), [Puppet](https://puppet.com), [Ansible](https://www.ansible.com)).
 
 * If other OSes need to be used (CentOS, Redhat, Arch, etc).
 * If dependency management becomes complex. For example, installing Laravel depends on Composer. Setting a document root for a project will change depending on Nginx or Apache. Currently, these dependencies are accounted for, but more advanced dependencies will likely not be.
