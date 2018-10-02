@@ -14,6 +14,8 @@ github_pat          = ""
 # Server Configuration
 hostname        = "vaprobash.test"
 start_dir       = "/vagrant"
+ssl_path        = "#{start_dir}/config/ssl"
+ca_filename     = "vabrobashCA" # "false"
 
 # Set a local private network IP address.
 # See http://en.wikipedia.org/wiki/Private_network for explanation
@@ -172,10 +174,10 @@ Vagrant.configure("2") do |config|
   end
 
   # Add SSH public key to authorized_keys
-  config.vm.provision "shell" do |s| 
+  config.vm.provision "shell" do |s|
     s.inline = <<-SHELL
       echo #{ssh_pub_key} >> /home/vagrant/.ssh/authorized_keys
-      echo #{ssh_pub_key} >> /root/.ssh/authorized_keys 
+      echo #{ssh_pub_key} >> /root/.ssh/authorized_keys
     SHELL
   end
 
@@ -228,6 +230,9 @@ Vagrant.configure("2") do |config|
 
   # optimize base box
   config.vm.provision "shell", path: "#{github_url}/scripts/base_box_optimizations.sh", privileged: true
+
+  # Setup custom SSL certificate
+  config.vm.provision "shell", path: "#{github_url}/scripts/ssl_certificate.sh", args: [hostname, ssl_path, ca_filename]
 
   # Provision PHP
   # config.vm.provision "shell", path: "#{github_url}/scripts/php.sh", args: [php_timezone, hhvm, php_version]
@@ -415,13 +420,13 @@ Vagrant.configure("2") do |config|
 
   # Install docker-nuke
   # config.vm.provision "shell", path: "#{github_url}/scripts/docker-nuke.sh"
-  
+
   # Install mkdocs
   # config.vm.provision "shell", path: "#{github_url}/scripts/mkdocs.sh"
-  
+
   # Install wp-cli
   # config.vm.provision "shell", path: "#{github_url}/scripts/wp-cli.sh"
-  
+
 
   ####
   # Customization
@@ -437,7 +442,7 @@ Vagrant.configure("2") do |config|
   # Add these to the same directory as the Vagrantfile.
   ##########
   # config.vm.provision "shell", path: "./vm-init.sh"
-  
+
 
   ####
   # System restart
