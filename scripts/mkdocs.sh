@@ -6,7 +6,7 @@ echo ">>> Installing mkdocs"
 add-apt-repository ppa:fkrull/deadsnakes-python2.7 && apt-get update
 
 # Install pip
-apt-get install -qq python-pip python-dev
+apt-get install -qq --force-yes python-pip python-dev
 
 # Install mkdocs
 pip install mkdocs
