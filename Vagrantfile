@@ -55,6 +55,7 @@ server_timezone  = "Europe/Zurich"
 mysql_root_password     = "root"        # We'll assume user "root"
 mysql_version           = "5.5"         # Options: 5.5 | 5.6
 mysql_enable_remote     = "true"        # remote access disabled when false
+mariadb_version         = "10.1"        # Options: 10.1 | 10.3
 pgsql_postgres_password = "postgres"    # We'll assume user "postgres"
 mongo_version           = "2.6"         # Options: 2.6 | 3.0
 mongo_enable_remote     = "true"        # remote access disabled when false
@@ -282,7 +283,7 @@ Vagrant.configure("2") do |config|
   # config.vm.provision "shell", path: "#{github_url}/scripts/mongodb.sh", args: [mongo_enable_remote, mongo_version]
 
   # Provision MariaDB
-  # config.vm.provision "shell", path: "#{github_url}/scripts/mariadb.sh", args: [mysql_root_password, mysql_enable_remote]
+  # config.vm.provision "shell", path: "#{github_url}/scripts/mariadb.sh", args: [mysql_root_password, mysql_enable_remote, mariadb_version]
 
   # Provision Neo4J
   # config.vm.provision "shell", path: "#{github_url}/scripts/neo4j.sh"
