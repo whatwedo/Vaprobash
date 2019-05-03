@@ -28,15 +28,6 @@ else
     github_url="$4"
 fi
 
-# Add repo for latest FULL stable Apache
-# (Required to remove conflicts with PHP PPA due to partial Apache upgrade within it)
-sudo add-apt-repository -y ppa:ondrej/apache2
-
-
-# Update Again
-sudo apt-key update
-sudo apt-get update
-
 # Install Apache
 # -qq implies -y --force-yes
 sudo apt-get install -qq apache2

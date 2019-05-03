@@ -35,6 +35,8 @@ else
     apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 4F4EA0AAE5267A6C
     apt-get install -y language-pack-en-base
     add-apt-repository -y ppa:ondrej/php
+    # fix as trusty is no longer supported by ondrej 
+    echo "deb https://ondrej-mirror.whatwedo.io/php/ trusty main" > /etc/apt/sources.list.d/ondrej-php-trusty.list
 
     apt-key update
     apt-get update
