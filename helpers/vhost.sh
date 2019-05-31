@@ -55,7 +55,7 @@ cat <<- _EOF_
         <FilesMatch \.php$>
             # Change this "proxy:unix:/path/to/fpm.socket"
             # if using a Unix socket
-            SetHandler "proxy:fcgi://127.0.0.1:9000"
+            SetHandler application/x-httpd-php
         </FilesMatch>
     </Directory>
 
@@ -89,7 +89,7 @@ cat <<- _EOF_
         <FilesMatch \.php$>
             # Change this "proxy:unix:/path/to/fpm.socket"
             # if using a Unix socket
-            SetHandler "proxy:fcgi://127.0.0.1:9000"
+            SetHandler application/x-httpd-php
         </FilesMatch>
     </Directory>
 

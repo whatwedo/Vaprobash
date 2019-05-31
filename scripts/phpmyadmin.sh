@@ -29,7 +29,7 @@ Alias /phpmyadmin /usr/share/phpmyadmin
         DirectoryIndex index.php
 
         <FilesMatch \.php$>
-            SetHandler "proxy:fcgi://127.0.0.1:9000"
+            SetHandler application/x-httpd-php
         </FilesMatch>
 
 </Directory>
