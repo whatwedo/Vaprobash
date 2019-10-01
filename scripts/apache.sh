@@ -30,7 +30,7 @@ fi
 
 # Install Apache
 # -qq implies -y --force-yes
-sudo apt-get install -qq apache2
+sudo apt-get install -qq apache2 libapache2-mod-php$PHP_VERSION
 
 echo ">>> Configuring Apache"
 
